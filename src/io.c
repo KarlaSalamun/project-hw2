@@ -9,7 +9,7 @@ int read_word (FILE *fd) {
 
 short read_half(FILE *fd) {
 	short half;
-	fread(&half,2,1,fd);
+	fread(&half,sizeof(short),1,fd);
 	return half;
 }
 
@@ -18,5 +18,5 @@ void write_word(FILE *fd, int word) {
 }
 
 void write_half(FILE *fd, short word) {
-	fwrite(&word,2,1,fd);
+	fwrite(&word,sizeof(short),1,fd);
 }
